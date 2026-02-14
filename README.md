@@ -10,8 +10,8 @@ StepLab is a full-stack e-commerce web application designed to simulate a shoe s
 ## Features
 
 ### User Features
-- Browse products on **Product Listing Page (PLP)**  
-- View detailed information on **Product Detail Page (PDP)**  
+- Browse products on **Product Listing Page**  
+- View detailed information on **Product Detail Page**  
 - Add, update quantity, or remove items from the shopping cart  
 - Checkout workflow with shipping information collection and order creation  
 
@@ -24,4 +24,7 @@ StepLab is a full-stack e-commerce web application designed to simulate a shoe s
 - **PostgreSQL** relational schema for Products, Carts, Orders, and Order Items  
 - Enforced data integrity using foreign keys, cascading deletes, and unique SKU constraints  
 - Laravel MVC architecture with Blade templates for views  
-- RESTful routing for backend operations  
+- RESTful routing for backend operations
+  
+## Database Architecture
+![Database Schema](screenshots/schema-diagram.png)
