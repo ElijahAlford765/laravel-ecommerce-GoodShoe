@@ -18,8 +18,6 @@ Route::get('/shop', [ShopController::class, 'index'])->name('shop.index');
 Route::get('/settings/password', [PasswordController::class, 'edit'])
     ->name('password.edit');
 
-Route::put('/user/password', [PasswordController::class, 'update'])
-    ->name('password.update');
 
 
 Route::get('/cart', [CartController::class,'index'])->name('cart.index');
