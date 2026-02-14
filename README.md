@@ -8,7 +8,6 @@ StepLab is a full-stack e-commerce web application designed to simulate a shoe s
 ---
 
 ## Features
-
 ### User Features
 - Browse products on **Product Listing Page**  
 - View detailed information on **Product Detail Page**  
@@ -28,3 +27,8 @@ StepLab is a full-stack e-commerce web application designed to simulate a shoe s
   
 ## Database Architecture
 ![Database Schema](screenshots/schema-diagram.png)
+
+## Notes
+
+- Some automated CI/build checks may fail due to missing optional pages (e.g., Appearance settings), but all **core functionality** — including Shop, Cart, Checkout, and Password Settings — is fully implemented and tested locally.
+- The app can be run locally following the setup instructions below.
