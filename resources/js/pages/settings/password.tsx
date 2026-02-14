@@ -11,14 +11,14 @@ import HeadingSmall from '@/components/heading-small';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { edit } from '@/routes/user-password';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
         title: 'Password settings',
-        href: edit().url,
+        href: '/user/password', // matches Route::put('/user/password', ...)
     },
 ];
+
 
 export default function Password() {
     const passwordInput = useRef<HTMLInputElement>(null);
@@ -36,27 +36,16 @@ export default function Password() {
                     />
 
                     <Form
-                        {...PasswordController.update.form()}
-                        options={{
-                            preserveScroll: true,
-                        }}
-                        resetOnError={[
-                            'password',
-                            'password_confirmation',
-                            'current_password',
-                        ]}
-                        resetOnSuccess
-                        onError={(errors) => {
-                            if (errors.password) {
-                                passwordInput.current?.focus();
-                            }
-
-                            if (errors.current_password) {
-                                currentPasswordInput.current?.focus();
-                            }
-                        }}
-                        className="space-y-6"
-                    >
+    {...PasswordController.update.form()}
+    options={{ preserveScroll: true }}
+    resetOnError={['password', 'password_confirmation', 'current_password']}
+    resetOnSuccess
+    onError={(errors) => {
+        if (errors.password) passwordInput.current?.focus();
+        if (errors.current_password) currentPasswordInput.current?.focus();
+    }}
+    className="space-y-6"
+>
                         {({ errors, processing, recentlySuccessful }) => (
                             <>
                                 <div className="grid gap-2">
