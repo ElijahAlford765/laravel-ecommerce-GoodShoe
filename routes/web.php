@@ -6,11 +6,20 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\Settings\PasswordController;
+
 
 
 Route::get('/', [ShopController::class,'index'])->name('shop.index');
 Route::get('/product/{id}', [ShopController::class,'show'])->name('shop.show');
 Route::get('/shop', [ShopController::class, 'index'])->name('shop.index');
+
+
+Route::get('/settings/password', [PasswordController::class, 'edit'])
+    ->name('password.edit');
+
+Route::put('/user/password', [PasswordController::class, 'update'])
+    ->name('password.update');
 
 
 Route::get('/cart', [CartController::class,'index'])->name('cart.index');
